@@ -1,4 +1,4 @@
-package com.javarush.module_3;
+package com.javarush.module_3.javaClasses;
 
 import lombok.Builder;
 
