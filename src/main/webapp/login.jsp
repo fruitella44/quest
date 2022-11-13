@@ -21,7 +21,7 @@
   <div class="position-absolute top-0 start-50 translate-middle-x">
     <h1>Укажите ваше имя</h1>
 
-    <form action="start" method="post">
+    <form action="login" method="post">
       <label>Имя пользователя:
         <input type="text" name="name">
       </label>

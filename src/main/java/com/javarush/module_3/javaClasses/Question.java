@@ -1,16 +1,19 @@
 package com.javarush.module_3.javaClasses;
 
-import lombok.Builder;
-import java.util.List;
-
-@Builder
 public class Question {
-    String text;
-    List<Answer> answerList;
-    boolean isWin;
-    boolean defeat;
+    private String question1;
+    private String question2;
+    private String question3;
 
-    public List<Answer> getAnswerList() {
-        return answerList;
+    public String getQuestion1() {
+        return question1;
+    }
+
+    public String getQuestion2() {
+        return question2;
+    }
+
+    public String getQuestion3() {
+        return question3;
     }
 }

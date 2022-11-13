@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="com.javarush.module_3.javaClasses.Answer" %>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -24,6 +25,38 @@
     <div class="position-absolute top-0 start-50 translate-middle-x">
         <h1>Вопрос - Ответ</h1>
         <p>Имя: ${name}</p>
+
+<%--        <% Answer answer = (Answer) session.getAttribute("answer");%>--%>
+        <% Answer answer = new Answer();%>
+        <c:set var ="accept" value="<%=answer.isWin()%>"/>
+        <c:set var ="reject" value="<%=answer.isLose()%>"/>
+
+        <form action="login" method="post">
+            <h2>Ты потерял память. Принять вызов НЛО? ${question1}</h2>
+            <button type="submit">Принять ${answer}</button>
+            <button type="submit">Отказаться ${answer}</button>
+        </form>
+        <hr>
+
+        <c:if test="${accept}">
+            <form action="login" method="post">
+                <h2>Ты принял вызов. Поднимешься на мостик к капитану? ${question2}</h2>
+                <button type="submit">Принять ${answer}</button>
+                <button type="submit">Отказаться ${answer}</button>
+            </form>
+            <hr>
+        </c:if>
+
+
+        <c:if test="${accept}">
+            <form action="login" method="post">
+                <h2>Ты поднялся на мостик. Ты кто? Рассказать правду о себе? ${question3}</h2>
+                <button type="submit">Принять ${answer}</button>
+                <button type="submit">Отказаться ${answer}</button>
+            </form>
+            <hr>
+        </c:if>
+
 
         <button onclick="restart()">Начать заного</button>
     </div>

@@ -7,14 +7,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
 
-@WebServlet(name = "InitServlet", value = "/start")
-public class InitServlet extends HttpServlet {
+@WebServlet(name = "LoginServlet", value = "/login")
+public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/start.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/login.jsp").forward(req, resp);
     }
 
     @Override
@@ -23,6 +22,6 @@ public class InitServlet extends HttpServlet {
         String name = req.getParameter("name");
         currentSession.setAttribute("name", name);
 
-        getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/question.jsp").forward(req, resp);
     }
 }
