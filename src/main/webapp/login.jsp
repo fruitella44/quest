@@ -14,15 +14,21 @@
   <title>Имя пользователя</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
-<body style="background-color: lightblue">
+<body style="background-color: #7990a9">
+<div class="position-relative">
 
-<h1>Укажите ваше имя</h1>
-<form>
-  <label>
-    <input type="text" name="name" value="" required>
-  <input type="submit" value="Принять" formaction="/question">
-  </label>
-</form>
+  <div class="position-absolute top-0 start-50 translate-middle-x">
+    <h1>Укажите ваше имя</h1>
+    <form>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Имя пользователя" aria-label="Имя пользователя" aria-describedby="basic-addon1" name="name" value="" required>
+        <button type="submit" class="btn btn-primary" formaction="/question">Принять</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>

@@ -15,14 +15,14 @@ import java.util.Map;
 public class LogicServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String variant = req.getParameter("variant");
+        String answer = req.getParameter("answer");
 
         HttpSession currentSession = req.getSession();
         Map<Integer, Questions> pages = (Map<Integer, Questions>) currentSession.getAttribute("questions");
         int pageNumber = (int) currentSession.getAttribute("pageNumber") + 1;
 
-        if (variant.equals("no") || pageNumber > pages.size()) {
-            resp.sendRedirect("/end.jsp?variant=" + variant);
+        if (answer.equals("reject") || pageNumber > pages.size()) {
+            resp.sendRedirect("/end.jsp?answer=" + answer);
             return;
         }
         currentSession.setAttribute("pageNumber", pageNumber);
