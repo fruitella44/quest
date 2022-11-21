@@ -28,4 +28,7 @@ public class LogicServlet extends HttpServlet {
         currentSession.setAttribute("pageNumber", pageNumber);
         resp.sendRedirect("/question.jsp");
     }
+
 }
+
+

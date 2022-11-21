@@ -2,7 +2,6 @@ package com.javarush.module_3.servlet;
 
 import com.javarush.module_3.javaClasses.Questions;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +13,7 @@ import java.net.InetAddress;
 
 @WebServlet(name = "QuestionServlet", value = "/question")
 public class QuestionServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession currentSession = req.getSession();
@@ -36,14 +36,13 @@ public class QuestionServlet extends HttpServlet {
 
     private void setAttributeCurrentSession(HttpSession currentSession) throws Exception {
         Questions questions = new Questions();
-        Object getAttribute = questions.getQuestionsMap();
-        currentSession.setAttribute("questions", getAttribute);
+        Object getAttributeMap = questions.getQuestionsMap();
 
-        InetAddress localHost = InetAddress.getLocalHost();
-        String ip = localHost.getHostAddress();
+        InetAddress inetAddress = InetAddress.getLocalHost();
+        String ip = inetAddress.getHostAddress();
 
+        currentSession.setAttribute("questions", getAttributeMap);
         currentSession.setAttribute("ip", ip);
-        currentSession.setAttribute("gameCounter", 0);
     }
 
 }

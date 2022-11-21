@@ -9,10 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5366c2f-cb1d-4dc3-9899-944db5ae20fa" name="Changes" comment="refactoring servlets and jsp, added statistic&#10;RestartServlet doesn't work">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/javarush/module_3/solution.txt" afterDir="false" />
+    <list default="true" id="b5366c2f-cb1d-4dc3-9899-944db5ae20fa" name="Changes" comment="refactoring QuestionServlet, added bootstrap components&#10;RestartServlet doesn't work">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/jquery-3.6.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/javarush/module_3/javaClasses/QuestionsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/javarush/module_3/servlet/QuestionServletTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javarush/module_3/javaClasses/Questions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javarush/module_3/javaClasses/Questions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/javarush/module_3/servlet/LogicServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javarush/module_3/servlet/LogicServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/javarush/module_3/servlet/QuestionServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javarush/module_3/servlet/QuestionServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/javarush/module_3/servlet/RestartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javarush/module_3/servlet/RestartServlet.java" afterDir="false" />
@@ -30,7 +32,9 @@
       <list>
         <option value="CSS File" />
         <option value="Jsp File" />
+        <option value="JavaScript File" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -64,7 +68,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "true",
-    "last_opened_file_path": "E:/Coding/Java/project-servlet",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "E:/Coding/Java/step_by_step",
     "list.type.of.created.stylesheet": "CSS",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
@@ -80,13 +86,20 @@
       <recent name="E:\Coding\Java\step_by_step\src\main\webapp" />
       <recent name="E:\Coding\Java\step_by_step\src\main\webapp\assets" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.javarush.module_3.javaClasses" />
+      <recent name="com.javarush.module_3.servlet" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.68">
+  <component name="RunManager" selected="JUnit.QuestionsTest.getQuestionsMap">
     <configuration name="TetsClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.javarush.module_3.javaClasses.TetsClass" />
       <module name="step_by_step" />
@@ -96,6 +109,38 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QuestionServletTest.checkSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="step_by_step" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.javarush.module_3.servlet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.javarush.module_3.servlet" />
+      <option name="MAIN_CLASS_NAME" value="com.javarush.module_3.servlet.QuestionServletTest" />
+      <option name="METHOD_NAME" value="checkSize" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QuestionsTest.getQuestionsMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="step_by_step" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.javarush.module_3.javaClasses.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.javarush.module_3.javaClasses" />
+      <option name="MAIN_CLASS_NAME" value="com.javarush.module_3.javaClasses.QuestionsTest" />
+      <option name="METHOD_NAME" value="getQuestionsMap" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -190,10 +235,14 @@
     </configuration>
     <list>
       <item itemvalue="Application.TetsClass" />
+      <item itemvalue="JUnit.QuestionServletTest.checkSize" />
+      <item itemvalue="JUnit.QuestionsTest.getQuestionsMap" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.68" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.QuestionsTest.getQuestionsMap" />
+        <item itemvalue="JUnit.QuestionServletTest.checkSize" />
         <item itemvalue="Application.TetsClass" />
       </list>
     </recent_temporary>
@@ -217,7 +266,8 @@
       <workItem from="1668437898792" duration="3552000" />
       <workItem from="1668499611523" duration="16902000" />
       <workItem from="1668538432886" duration="40000" />
-      <workItem from="1668684201597" duration="14609000" />
+      <workItem from="1668684201597" duration="20357000" />
+      <workItem from="1669012399752" duration="14002000" />
     </task>
     <task id="LOCAL-00001" summary="added dependecies, tomcat, jsp file, test build war&#10;initial test success">
       <created>1667986033608</created>
@@ -247,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668513827349</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="refactoring QuestionServlet, added bootstrap components&#10;RestartServlet doesn't work">
+      <created>1668705890380</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668705890380</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +326,7 @@
     <MESSAGE value="added class QuestLogic" />
     <MESSAGE value="refactoring LoginServelt and QuestionServlet&#10;works only authorization" />
     <MESSAGE value="refactoring servlets and jsp, added statistic&#10;RestartServlet doesn't work" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring servlets and jsp, added statistic&#10;RestartServlet doesn't work" />
+    <MESSAGE value="refactoring QuestionServlet, added bootstrap components&#10;RestartServlet doesn't work" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring QuestionServlet, added bootstrap components&#10;RestartServlet doesn't work" />
   </component>
 </project>
