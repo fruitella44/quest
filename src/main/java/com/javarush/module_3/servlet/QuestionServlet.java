@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.net.InetAddress;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 @WebServlet(name = "QuestionServlet", value = "/question")
 public class QuestionServlet extends HttpServlet {
@@ -41,8 +43,12 @@ public class QuestionServlet extends HttpServlet {
         InetAddress inetAddress = InetAddress.getLocalHost();
         String ip = inetAddress.getHostAddress();
 
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+        String time = dateTimeFormatter.format(LocalTime.now());
+
         currentSession.setAttribute("questions", getAttributeMap);
         currentSession.setAttribute("ip", ip);
+        currentSession.setAttribute("time", time);
     }
 
 }

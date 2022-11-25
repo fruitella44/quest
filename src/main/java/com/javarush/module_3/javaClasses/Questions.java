@@ -3,6 +3,8 @@ package com.javarush.module_3.javaClasses;
 import java.util.HashMap;
 import java.util.Map;
 
+import static java.util.Objects.isNull;
+
 public class Questions {
     private String question;
     private String endGame;
@@ -18,6 +20,16 @@ public class Questions {
     }
 
     public Questions(String question, String endGame, String accept, String reject) {
+        if (isNull(question)) {
+            throw new IllegalArgumentException("Value cannot be null");
+        } else if (isNull(endGame)) {
+            throw new IllegalArgumentException("Value cannot be null");
+        } else if (isNull(accept)) {
+            throw new IllegalArgumentException("Value cannot be null");
+        } else if (isNull(reject)) {
+            throw new IllegalArgumentException("Value cannot be null");
+        }
+
         this.question = question;
         this.endGame = endGame;
         this.accept = accept;
