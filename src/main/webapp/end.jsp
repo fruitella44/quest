@@ -21,6 +21,7 @@
 <c:set var="answer" scope="page" value="<%= request.getParameter(\"answer\") %>"/>
 <c:set var="currentPage" scope="page" value="${questions.get(pageNumber)}"/>
 
+
 <c:if test="${answer.equals(\"accept\")}">
   <c:set var="gameOver" scope="page" value="Тебя вернули домой. Победа"/>
 </c:if>
@@ -39,6 +40,9 @@
       <h2>Статистика:</h2>
       <p>IP address: ${ip}</p>
       <p>Игрок: ${name}</p>
+      <p>
+        Количество игр: <%=(request.getAttribute("gameCounter") == null ? "0" : request.getAttribute("gameCounter"))%>
+      </p>
       <p>Текущее время: ${time}</p>
     </form>
   </div>
@@ -51,7 +55,7 @@
             url: '/restart',
             contentType: 'application/json;charset=UTF-8',
             success: function(){
-                window.location = "/login.jsp";
+                window.location = "/question.jsp";
             },
             error: function(xhr, type) {
                 alert("ajax error response type " + type);

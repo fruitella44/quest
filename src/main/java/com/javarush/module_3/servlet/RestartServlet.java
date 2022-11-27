@@ -11,11 +11,15 @@ import java.io.IOException;
 
 @WebServlet(name = "RestartServlet", value = "/restart")
 public class RestartServlet extends HttpServlet {
+    private int count = 0;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession currentSession = req.getSession(true);
         currentSession.setMaxInactiveInterval(-1);
-        getServletContext().getRequestDispatcher("/login.jsp").forward(req, resp);
+
+        count++;
+        req.setAttribute("gameCounter", count);
+        getServletContext().getRequestDispatcher("/question.jsp").forward(req, resp);
     }
 }

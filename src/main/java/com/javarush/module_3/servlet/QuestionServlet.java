@@ -43,7 +43,7 @@ public class QuestionServlet extends HttpServlet {
         InetAddress inetAddress = InetAddress.getLocalHost();
         String ip = inetAddress.getHostAddress();
 
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm");
         String time = dateTimeFormatter.format(LocalTime.now());
 
         currentSession.setAttribute("questions", getAttributeMap);

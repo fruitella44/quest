@@ -15,9 +15,9 @@ import java.util.Map;
 public class LogicServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String answer = req.getParameter("answer");
-
         HttpSession currentSession = req.getSession();
+
+        String answer = req.getParameter("answer");
         Map<Integer, Questions> pages = (Map<Integer, Questions>) currentSession.getAttribute("questions");
         int pageNumber = (int) currentSession.getAttribute("pageNumber") + 1;
 
