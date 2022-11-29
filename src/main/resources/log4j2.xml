@@ -5,13 +5,13 @@
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss} [%t] %-5p %c{1}:%L - %msg%n" />
         </Console>
-        <RollingFile name="RollingFile" filename="logs/appLog.log"
+        <RollingFile name="RollingFile" filename="E:/Coding/Java/quest/src/main/resources/logs/appLog.log"
                      filepattern="${logPath}/%d{YYYY-MM-dd HH:mm:ss}-appLog.log">
             <PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss} [%t] %-5p %c{1}:%L - %msg%n" />
             <Policies>
-                <SizeBasedTriggeringPolicy size="100 MB" />
+                <SizeBasedTriggeringPolicy size="500KB" />
             </Policies>
-            <DefaultRolloverStrategy max="20" />
+            <DefaultRolloverStrategy max="10" />
         </RollingFile>
     </Appenders>
     <Loggers>

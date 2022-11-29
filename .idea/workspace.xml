@@ -2,25 +2,17 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="step_by_step:war exploded" />
+      <artifact name="quest:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5366c2f-cb1d-4dc3-9899-944db5ae20fa" name="Changes" comment="added tests for Questions">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" afterDir="false" />
+    <list default="true" id="b5366c2f-cb1d-4dc3-9899-944db5ae20fa" name="Changes" comment="added Logger, log4j2.xml&#10;Test logs into console successful&#10;Test logs into file doesn't work (wrong path in configuration xml)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javarush/module_3/javaClasses/Questions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javarush/module_3/service/Questions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javarush/module_3/servlet/LogicServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javarush/module_3/servlet/LogicServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javarush/module_3/servlet/QuestionServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javarush/module_3/servlet/QuestionServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javarush/module_3/servlet/RestartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javarush/module_3/servlet/RestartServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/end.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/end.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/question.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/question.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/javarush/module_3/javaClasses/QuestionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/javarush/module_3/service/QuestionsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/javarush/module_3/solution.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javarush/module_3/solution.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +72,7 @@
     "WebServerToolWindowFactoryState": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "E:/Coding/Java/hippodrome",
+    "last_opened_file_path": "E:/Coding/Java/quest",
     "list.type.of.created.stylesheet": "CSS",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
@@ -106,6 +98,7 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
+      <command value="mvn install" />
       <command value="mvn clean" />
       <command value="mvn clean install" />
     </option>
@@ -195,7 +188,7 @@
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/login.jsp" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="step_by_step:war exploded">
+        <artifact name="quest:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -276,6 +269,7 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="step_by_step:war exploded" />
+          <artifact name="quest:war exploded" />
         </option>
       </method>
     </configuration>
@@ -322,6 +316,9 @@
       <workItem from="1669385191344" duration="4104000" />
       <workItem from="1669487936358" duration="26000" />
       <workItem from="1669540515307" duration="11786000" />
+      <workItem from="1669758971805" duration="243000" />
+      <workItem from="1669759265083" duration="687000" />
+      <workItem from="1669760027681" duration="655000" />
     </task>
     <task id="LOCAL-00001" summary="added dependecies, tomcat, jsp file, test build war&#10;initial test success">
       <created>1667986033608</created>
@@ -372,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669393649503</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added Logger, log4j2.xml&#10;Test logs into console successful&#10;Test logs into file doesn't work (wrong path in configuration xml)">
+      <created>1669756349322</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669756349322</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,6 +413,7 @@
     <MESSAGE value="refactoring QuestionServlet, added bootstrap components&#10;RestartServlet doesn't work" />
     <MESSAGE value="fixed RestartServlet" />
     <MESSAGE value="added tests for Questions" />
-    <option name="LAST_COMMIT_MESSAGE" value="added tests for Questions" />
+    <MESSAGE value="added Logger, log4j2.xml&#10;Test logs into console successful&#10;Test logs into file doesn't work (wrong path in configuration xml)" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Logger, log4j2.xml&#10;Test logs into console successful&#10;Test logs into file doesn't work (wrong path in configuration xml)" />
   </component>
 </project>
