@@ -1,6 +1,9 @@
 package com.javarush.module_3.servlet;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,15 +14,15 @@ import java.io.IOException;
 
 @WebServlet(name = "RestartServlet", value = "/restart")
 public class RestartServlet extends HttpServlet {
-    private int count = 0;
+    private static final Logger LOGGER = LogManager.getLogger(RestartServlet.class);
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession currentSession = req.getSession(true);
         currentSession.setMaxInactiveInterval(-1);
+        LOGGER.info("Session active");
 
-        count++;
-        req.setAttribute("gameCounter", count);
-        getServletContext().getRequestDispatcher("/question.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/login.jsp").forward(req, resp);
+        LOGGER.debug("Send redirect login.jsp");
     }
 }

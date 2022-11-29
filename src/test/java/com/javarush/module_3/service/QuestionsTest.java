@@ -1,4 +1,4 @@
-package com.javarush.module_3.javaClasses;
+package com.javarush.module_3.service;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

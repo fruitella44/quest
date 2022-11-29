@@ -40,9 +40,7 @@
       <h2>Статистика:</h2>
       <p>IP address: ${ip}</p>
       <p>Игрок: ${name}</p>
-      <p>
-        Количество игр: <%=(request.getAttribute("gameCounter") == null ? "0" : request.getAttribute("gameCounter"))%>
-      </p>
+      <p>Количество игр: ${gameCounter}</p>
       <p>Текущее время: ${time}</p>
     </form>
   </div>
@@ -55,7 +53,7 @@
             url: '/restart',
             contentType: 'application/json;charset=UTF-8',
             success: function(){
-                window.location = "/question.jsp";
+                window.location = "/login.jsp";
             },
             error: function(xhr, type) {
                 alert("ajax error response type " + type);

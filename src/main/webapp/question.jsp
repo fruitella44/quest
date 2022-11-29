@@ -44,9 +44,7 @@
             <h2>Информация о пользователе:</h2>
             <p>IP address: ${ip}</p>
             <p>Игрок: ${name}</p>
-            <p>
-                Количество игр: <%=(request.getAttribute("gameCounter") == null ? "0" : request.getAttribute("gameCounter"))%>
-            </p>
+            <p>Количество игр: ${gameCounter}</p>
             <p>Текущее время: ${time}</p>
         </form>
     </div>
