@@ -23,6 +23,6 @@ public class RestartServlet extends HttpServlet {
         LOGGER.info("Session active");
 
         getServletContext().getRequestDispatcher("/login.jsp").forward(req, resp);
-        LOGGER.debug("Send redirect login.jsp");
+        LOGGER.debug("Start over. Send redirect login.jsp");
     }
 }

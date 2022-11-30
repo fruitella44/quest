@@ -2,7 +2,6 @@ package com.javarush.module_3.servlet;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -16,23 +15,19 @@ import static org.mockito.Mockito.mock;
 
 @ExtendWith(MockitoExtension.class)
 class QuestionServletTest {
-
-    @Mock
-    HttpSession session;
-
-    @Mock
-    QuestionServlet servlet = new QuestionServlet();
+    private final static String path = "/question.jsp";
 
     @Test
-    void checkParamName() throws ServletException, IOException {
-        HttpServletRequest request = mock(HttpServletRequest.class);
-        HttpServletResponse response = mock(HttpServletResponse.class);
+    void checkAttributesElements() throws ServletException, IOException {
+        final QuestionServlet servlet = new QuestionServlet();
+        final HttpServletRequest request = mock(HttpServletRequest.class);
+        final HttpServletResponse response = mock(HttpServletResponse.class);
+        final HttpSession session = mock(HttpSession.class);
 
-        // mock the returned value of request.getParameterMap()
-        Mockito.when(request.getParameter("name")).thenReturn("Test");
-//        Mockito.when(response.getWriter()).thenReturn(new PrintWriter(writer));
-//
-//        servlet.doGet(request, response);
-//        assertThat(writer.toString()).isEqualTo("Test");
+        Mockito.when(session.getAttributeNames().hasMoreElements()).thenReturn(null);
+        servlet.doGet(request, response);
+
+        Mockito.verify(request).getSession();
+        Mockito.verify(response).sendRedirect(path);
     }
 }
