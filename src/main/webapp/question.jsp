@@ -16,12 +16,14 @@
     <script src="<c:url value="jquery-3.6.0.min.js"/>"></script>
 </head>
 
-<body style="background-color: #7990a9">
+<body style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/59.jpg')">
 <c:set var="currentPage" scope="page" value="${questions.get(pageNumber)}"/>
 
-<div class="position-relative">
-    <div class="position-absolute top-0 start-50 translate-middle-x">
+<div class="container text-center">
+    <div class="row justify-content-md-center">
         <h2>${currentPage.getQuestion()}</h2>
+
+        <div class="col-md-auto">
         <form>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="answer" value="accept" id="flexCheckDefault">
@@ -31,24 +33,28 @@
             </div>
 
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="answer" value="reject" id="flexCheckChecked" checked>
+                <input class="form-check-input" type="checkbox" name="answer" value="reject" id="flexCheckChecked">
                 <label class="form-check-label" for="flexCheckChecked">
                     ${currentPage.getReject()}
                 </label>
             </div>
             <button type="submit" class="btn btn-primary" formaction="/logic">Принять</button>
         </form>
+        </div>
 
-        <hr>
-        <form id="info">
-            <h2>Информация о пользователе:</h2>
-            <p>IP address: ${ip}</p>
-            <p>Игрок: ${name}</p>
-            <p>Количество игр: ${gameCounter}</p>
-            <p>Текущее время: ${time}</p>
-        </form>
+        <div class="fixed-bottom">
+            <hr>
+            <form id="info">
+                <h2>Информация о пользователе:</h2>
+                <p>IP address: ${ip}</p>
+                <p>Игрок: ${name}</p>
+                <p>Количество игр: ${gameCounter}</p>
+                <p>Текущее время: ${time}</p>
+            </form>
+        </div>
     </div>
 </div>
+
 
 
 

@@ -17,32 +17,38 @@
   <script src="<c:url value="jquery-3.6.0.min.js"/>"></script>
 </head>
 
-<body style="background-color: #7990a9">
+<body style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/59.jpg')">
 <c:set var="answer" scope="page" value="<%= request.getParameter(\"answer\") %>"/>
 <c:set var="currentPage" scope="page" value="${questions.get(pageNumber)}"/>
 
 
 <c:if test="${answer.equals(\"accept\")}">
-  <c:set var="gameOver" scope="page" value="Тебя вернули домой. Победа"/>
+  <c:set var="gameOver" scope="page" value="Тебя вернули домой. Победа!"/>
 </c:if>
 
 <c:if test="${answer.equals(\"reject\")}">
   <c:set var="gameOver" scope="page" value="${currentPage.getEndGame()}"/>
 </c:if>
 
-<div class="position-relative">
-  <div class="position-absolute top-0 start-50 translate-middle-x">
+<div class="container text-center">
+  <div class="row justify-content-md-center">
     <h2>${gameOver}</h2>
-    <button type="submit" class="btn btn-primary" onclick="restart()">Попробовать еще раз</button>
 
-    <hr>
-    <form id="info">
-      <h2>Статистика:</h2>
-      <p>IP address: ${ip}</p>
-      <p>Игрок: ${name}</p>
-      <p>Количество игр: ${gameCounter}</p>
-      <p>Текущее время: ${time}</p>
-    </form>
+    <div class="col-md-auto">
+        <button type="submit" class="btn btn-primary" onclick="restart()">Попробовать еще раз</button>
+    </div>
+
+
+    <div class="fixed-bottom">
+      <hr>
+      <form id="info">
+        <h2>Информация о пользователе:</h2>
+        <p>IP address: ${ip}</p>
+        <p>Игрок: ${name}</p>
+        <p>Количество игр: ${gameCounter}</p>
+        <p>Текущее время: ${time}</p>
+      </form>
+    </div>
   </div>
 </div>
 
