@@ -17,7 +17,7 @@
   <script src="<c:url value="jquery-3.6.0.min.js"/>"></script>
 </head>
 
-<body style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/59.jpg')">
+<body style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/62.jpg')">
 <c:set var="answer" scope="page" value="<%= request.getParameter(\"answer\") %>"/>
 <c:set var="currentPage" scope="page" value="${questions.get(pageNumber)}"/>
 
