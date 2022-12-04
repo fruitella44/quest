@@ -14,7 +14,7 @@ import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 
 @ExtendWith(MockitoExtension.class)
-class QuestionsTest {
+class QuestionServiceTest {
 
     @Test
     void checkNullArgumentQuestions() {
