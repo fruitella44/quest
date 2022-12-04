@@ -27,7 +27,10 @@ public class LogicServlet extends HttpServlet {
         int pageNumber = (int) currentSession.getAttribute("pageNumber") + 1;
         LOGGER.debug("Session pageNumber attributes: [" + pageNumber + "]");
 
-        if (answer.equals("reject") || pageNumber > pages.size()) {
+        if (answer == null) {
+            getServletContext().getRequestDispatcher("/question.jsp").forward(req, resp);
+            LOGGER.debug("User didn't pick an answer. Answer=" + null);
+        } else if (answer.equals("reject") || pageNumber > pages.size()) {
             resp.sendRedirect("/end.jsp?answer=" + answer);
             LOGGER.debug("Redirect by " + answer);
             return;
