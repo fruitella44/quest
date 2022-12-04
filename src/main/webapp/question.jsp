@@ -16,25 +16,25 @@
     <script src="<c:url value="jquery-3.6.0.min.js"/>"></script>
 </head>
 
-<body style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/62.jpg')">
+<body style="background-image: url('https://i.imgur.com/27TXzpl.jpg')">
 <c:set var="currentPage" scope="page" value="${questions.get(pageNumber)}"/>
 
 <div class="container text-center">
     <div class="row justify-content-md-center">
-        <h2>${currentPage.getQuestion()}</h2>
+        <h2 class="text-light">${currentPage.getQuestion()}</h2>
 
         <div class="col-md-auto">
         <form>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="answer" value="accept" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
+                <label class="text-light form-check-label" for="flexCheckDefault">
                     ${currentPage.getAccept()}
                 </label>
             </div>
 
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="answer" value="reject" id="flexCheckChecked">
-                <label class="form-check-label" for="flexCheckChecked">
+                <label class="text-light form-check-label" for="flexCheckChecked" >
                     ${currentPage.getReject()}
                 </label>
             </div>
@@ -45,11 +45,11 @@
         <div class="fixed-bottom">
             <hr>
             <form id="info">
-                <h2>Информация о пользователе:</h2>
-                <p>IP address: ${ip}</p>
-                <p>Игрок: ${name}</p>
-                <p>Количество игр: ${gameCounter}</p>
-                <p>Текущее время: ${time}</p>
+                <h2 class="text-light">Информация:</h2>
+                <p class="text-light">IP address: ${ip}</p>
+                <p class="text-light">Игрок: ${name}</p>
+                <p class="text-light">Общее количество игр от всех пользователей: ${gameCounter}</p>
+                <p class="text-light">Дата и время публикации: ${dateTime}</p>
             </form>
         </div>
     </div>

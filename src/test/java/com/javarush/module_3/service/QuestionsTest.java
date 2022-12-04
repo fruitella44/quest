@@ -18,7 +18,7 @@ class QuestionsTest {
 
     @Test
     void checkNullArgumentQuestions() {
-        assertThrows(IllegalArgumentException.class, () -> new Questions(null, null, null, null));
+        assertThrows(IllegalArgumentException.class, () -> new QuestionService(null, null, null, null));
     }
 
     @Test

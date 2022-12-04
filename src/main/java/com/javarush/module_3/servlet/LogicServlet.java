@@ -1,6 +1,6 @@
 package com.javarush.module_3.servlet;
 
-import com.javarush.module_3.service.Questions;
+import com.javarush.module_3.service.QuestionService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,7 +23,7 @@ public class LogicServlet extends HttpServlet {
         LOGGER.info("Session active");
 
         String answer = req.getParameter("answer");
-        Map<Integer, Questions> pages = (Map<Integer, Questions>) currentSession.getAttribute("questions");
+        Map<Integer, QuestionService> pages = (Map<Integer, QuestionService>) currentSession.getAttribute("questions");
         int pageNumber = (int) currentSession.getAttribute("pageNumber") + 1;
         LOGGER.debug("Session pageNumber attributes: [" + pageNumber + "]");
 

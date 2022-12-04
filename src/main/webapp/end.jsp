@@ -17,7 +17,7 @@
   <script src="<c:url value="jquery-3.6.0.min.js"/>"></script>
 </head>
 
-<body style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/62.jpg')">
+<body style="background-image: url('https://i.imgur.com/27TXzpl.jpg')">
 <c:set var="answer" scope="page" value="<%= request.getParameter(\"answer\") %>"/>
 <c:set var="currentPage" scope="page" value="${questions.get(pageNumber)}"/>
 
@@ -31,7 +31,7 @@
 </c:if>
 
 <div class="container text-center">
-  <div class="row justify-content-md-center">
+  <div class="text-light row justify-content-md-center">
     <h2>${gameOver}</h2>
 
     <div class="col-md-auto">
@@ -42,11 +42,11 @@
     <div class="fixed-bottom">
       <hr>
       <form id="info">
-        <h2>Информация о пользователе:</h2>
-        <p>IP address: ${ip}</p>
-        <p>Игрок: ${name}</p>
-        <p>Количество игр: ${gameCounter}</p>
-        <p>Текущее время: ${time}</p>
+        <h2 class="text-light">Информация:</h2>
+        <p class="text-light">IP address: ${ip}</p>
+        <p class="text-light">Игрок: ${name}</p>
+        <p class="text-light">Общее количество игр от всех пользователей: ${gameCounter}</p>
+        <p class="text-light">Дата и время публикации: ${dateTime}</p>
       </form>
     </div>
   </div>
