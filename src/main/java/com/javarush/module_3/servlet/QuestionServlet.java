@@ -51,8 +51,8 @@ public class QuestionServlet extends HttpServlet {
         Object getAttributeQuestion = questions.getQuestionService();
         Object ip = infoService.getInetAddress().getHostAddress();
         Object dateTime = infoService.getDateTimeFormatter().format(LocalDateTime.now());
-        Object gameCounter = infoService.getGameCounter();
 
+        GAME_COUNTER++;
         currentSession.getAttribute("gameCounter");
 
         currentSession.setAttribute("questions", getAttributeQuestion);
@@ -60,8 +60,8 @@ public class QuestionServlet extends HttpServlet {
 
         currentSession.setAttribute("ip", ip);
         currentSession.setAttribute("dateTime", dateTime);
-        currentSession.setAttribute("gameCounter", gameCounter);
-        LOGGER.debug("Added attributes: [ip=" + ip + " time=" + dateTime + " gameCounter=" + gameCounter + "]");
+        currentSession.setAttribute("gameCounter", GAME_COUNTER);
+        LOGGER.debug("Added attributes: [ip=" + ip + " time=" + dateTime + " gameCounter=" + GAME_COUNTER + "]");
 
     }
 }
