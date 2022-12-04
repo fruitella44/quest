@@ -30,4 +30,5 @@ class QuestionServletTest {
         Mockito.verify(request).getSession();
         Mockito.verify(response).sendRedirect(path);
     }
+
 }

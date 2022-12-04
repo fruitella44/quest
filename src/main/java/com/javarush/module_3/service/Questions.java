@@ -13,21 +13,21 @@ public class Questions {
     private String endGame;
     private String accept;
     private String reject;
-    private final Map<Integer, Questions> questionsMap = new HashMap<>();
+    private final Map<Integer, Questions> questionService = new HashMap<>();
     private static final Logger LOGGER = LogManager.getLogger(Questions.class);
 
 
     public Questions() {
-        questionsMap.put(1, new Questions("Ты потерял память. Принять вызов НЛО?",
+        questionService.put(1, new Questions("Ты потерял память. Принять вызов НЛО?",
                 "Ты отклонил вызов. Поражение!", "Согласиться", "Отказаться"));
 
-        questionsMap.put(2, new Questions("Ты принял вызов. Подняться на мостик к капитану?",
+        questionService.put(2, new Questions("Ты принял вызов. Подняться на мостик к капитану?",
                 "Ты не пошёл на переговоры. Поражение!", "Согласиться", "Отказаться"));
 
-        questionsMap.put(3, new Questions("Ты поднялся на мостик, кто ты? Рассказать правду о себе?",
+        questionService.put(3, new Questions("Ты поднялся на мостик, кто ты? Рассказать правду о себе?",
                 "Твою ложь разоблачили. Поражение!", "Согласиться", "Отказаться"));
 
-        LOGGER.info("Starting application. Values size: " + getQuestionsMap().size());
+        LOGGER.info("Starting application. Values size: " + getQuestionService().size());
     }
 
     public Questions(String question, String endGame, String accept, String reject) {
@@ -69,8 +69,8 @@ public class Questions {
         return reject;
     }
 
-    public Map<Integer, Questions> getQuestionsMap() {
-        return questionsMap;
+    public Map<Integer, Questions> getQuestionService() {
+        return questionService;
     }
 
 
@@ -81,7 +81,7 @@ public class Questions {
                 ", endGame='" + endGame + '\'' +
                 ", accept='" + accept + '\'' +
                 ", reject='" + reject + '\'' +
-                ", questionsMap=" + questionsMap +
+                ", questionsMap=" + questionService +
                 '}';
     }
 }

@@ -52,4 +52,5 @@ class QuestionsTest {
         doReturn(expectedMessage).when(questionsMap).get(any(int.class));
         assertEquals(expectedMessage, questionsMap.get(expectedKey));
     }
+
 }

@@ -47,7 +47,7 @@ public class QuestionServlet extends HttpServlet {
 
     private void setAttributeCurrentSession(HttpSession currentSession) throws Exception {
         Questions questions = new Questions();
-        Object getAttributeMap = questions.getQuestionsMap();
+        Object getAttributeMap = questions.getQuestionService();
 
         InetAddress inetAddress = InetAddress.getLocalHost();
         String ip = inetAddress.getHostAddress();
@@ -60,7 +60,7 @@ public class QuestionServlet extends HttpServlet {
 
         currentSession.setAttribute("questions", getAttributeMap);
 
-        LOGGER.debug("Added attributes: [" + questions.getQuestionsMap() + "]");
+        LOGGER.debug("Added attributes: [" + questions.getQuestionService() + "]");
 
         currentSession.setAttribute("ip", ip);
         currentSession.setAttribute("time", time);
