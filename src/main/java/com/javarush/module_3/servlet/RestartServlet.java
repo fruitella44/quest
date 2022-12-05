@@ -20,7 +20,7 @@ public class RestartServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession currentSession = req.getSession(true);
         currentSession.setMaxInactiveInterval(-1);
-        LOGGER.info("Session active");
+        LOGGER.info("Session active. Max interval until browser is open");
 
         getServletContext().getRequestDispatcher("/login.jsp").forward(req, resp);
         LOGGER.debug("Start over. Send redirect login.jsp");

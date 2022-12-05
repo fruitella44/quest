@@ -13,6 +13,8 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Map;
 
+import static java.util.Objects.isNull;
+
 @WebServlet(name = "LogicServlet", value = "/logic")
 public class LogicServlet extends HttpServlet {
     private static final Logger LOGGER = LogManager.getLogger(LogicServlet.class);
@@ -27,12 +29,13 @@ public class LogicServlet extends HttpServlet {
         int pageNumber = (int) currentSession.getAttribute("pageNumber") + 1;
         LOGGER.debug("Session pageNumber attributes: [" + pageNumber + "]");
 
-        if (answer == null) {
+        if (isNull(answer)) {
             getServletContext().getRequestDispatcher("/question.jsp").forward(req, resp);
             LOGGER.debug("User didn't pick an answer. Answer=" + null);
         } else if (answer.equals("reject") || pageNumber > pages.size()) {
             resp.sendRedirect("/end.jsp?answer=" + answer);
             LOGGER.debug("Redirect by " + answer);
+
             return;
         }
 

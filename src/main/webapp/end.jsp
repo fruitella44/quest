@@ -40,7 +40,6 @@
 
 
     <div class="fixed-bottom">
-      <hr>
       <form id="info">
         <h2 class="text-light">Информация:</h2>
         <p class="text-light">IP address: ${ip}</p>
@@ -58,7 +57,7 @@
             type: 'POST',
             url: '/restart',
             contentType: 'application/json;charset=UTF-8',
-            success: function(){
+            success: function() {
                 window.location = "/login.jsp";
             },
             error: function(xhr, type) {

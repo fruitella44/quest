@@ -43,7 +43,6 @@
         </div>
 
         <div class="fixed-bottom">
-            <hr>
             <form id="info">
                 <h2 class="text-light">Информация:</h2>
                 <p class="text-light">IP address: ${ip}</p>

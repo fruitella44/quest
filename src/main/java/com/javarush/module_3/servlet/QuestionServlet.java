@@ -12,11 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.time.LocalDateTime;
 
 @WebServlet(name = "QuestionServlet", value = "/question")
 public class QuestionServlet extends HttpServlet {
-    private int GAME_COUNTER = 0;
     private static final Logger LOGGER = LogManager.getLogger(QuestionServlet.class);
 
     @Override
@@ -28,7 +26,7 @@ public class QuestionServlet extends HttpServlet {
             try {
                 setAttributeCurrentSession(currentSession);
             } catch (Exception exception) {
-                LOGGER.error("Session has not attributes: " + exception);
+                LOGGER.error("Session has no attributes: " + exception);
                 throw new RuntimeException(exception);
             }
         }
@@ -50,9 +48,9 @@ public class QuestionServlet extends HttpServlet {
 
         Object getAttributeQuestion = questions.getQuestionService();
         Object ip = infoService.getInetAddress().getHostAddress();
-        Object dateTime = infoService.getDateTimeFormatter().format(LocalDateTime.now());
+        Object dateTime = infoService.getDateTimeFormatter();
+        Object gameCounter = infoService.getGameCounter();
 
-        GAME_COUNTER++;
         currentSession.getAttribute("gameCounter");
 
         currentSession.setAttribute("questions", getAttributeQuestion);
@@ -60,8 +58,8 @@ public class QuestionServlet extends HttpServlet {
 
         currentSession.setAttribute("ip", ip);
         currentSession.setAttribute("dateTime", dateTime);
-        currentSession.setAttribute("gameCounter", GAME_COUNTER);
-        LOGGER.debug("Added attributes: [ip=" + ip + " time=" + dateTime + " gameCounter=" + GAME_COUNTER + "]");
+        currentSession.setAttribute("gameCounter", gameCounter);
+        LOGGER.debug("Added attributes: [ip=" + ip + " dateTime=" + dateTime + " gameCounter=" + gameCounter + "]");
 
     }
 }
