@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration status="info">
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss} [%t] %-5p %c{1}:%L - %msg%n" />
+        </Console>
+        <RollingFile name="RollingFile" filename="E:/Coding/Java/quest/src/main/resources/logs/appLog.log"
+                     filepattern="${logPath}/%d{YYYY-MM-dd HH:mm:ss}-appLog.log">
+            <PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss} [%t] %-5p %c{1}:%L - %msg%n" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="500KB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10" />
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="all">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="RollingFile" />
+        </Root>
+    </Loggers>
+
+</Configuration>
