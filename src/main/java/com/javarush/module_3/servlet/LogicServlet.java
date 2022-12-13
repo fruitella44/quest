@@ -32,10 +32,11 @@ public class LogicServlet extends HttpServlet {
         if (isNull(answer)) {
             getServletContext().getRequestDispatcher("/question.jsp").forward(req, resp);
             LOGGER.debug("User didn't pick an answer. Answer=" + null);
+            return;
+
         } else if (answer.equals("reject") || pageNumber > pages.size()) {
             resp.sendRedirect("/end.jsp?answer=" + answer);
             LOGGER.debug("Redirect by " + answer);
-
             return;
         }
 

@@ -26,7 +26,7 @@ public class QuestionServlet extends HttpServlet {
             try {
                 setAttributeCurrentSession(currentSession);
             } catch (Exception exception) {
-                LOGGER.error("Session has no attributes: " + exception);
+                LOGGER.error("Session has no attributes after redirect to question.jsp: " + exception);
                 throw new RuntimeException(exception);
             }
         }
@@ -44,22 +44,23 @@ public class QuestionServlet extends HttpServlet {
 
     private void setAttributeCurrentSession(HttpSession currentSession) throws Exception {
         QuestionService questions = new QuestionService();
-        InfoService infoService = new InfoService();
 
         Object getAttributeQuestion = questions.getQuestionService();
-        Object ip = infoService.getInetAddress().getHostAddress();
-        Object dateTime = infoService.getDateTimeFormatter();
-        Object gameCounter = infoService.getGameCounter();
+        LOGGER.debug("Clone hashMap into concurrent Map");
+
+        Object machineNameAndIp = new InfoService().getIP_HOST_ADDRESS();
+        Object dateReleaseUpdate = InfoService.getDateReleaseUpdate();
+        Object gameCounter = InfoService.getGameCounter();
 
         currentSession.getAttribute("gameCounter");
 
         currentSession.setAttribute("questions", getAttributeQuestion);
         LOGGER.debug("Added attributes: [" + questions.getQuestionService() + "]");
 
-        currentSession.setAttribute("ip", ip);
-        currentSession.setAttribute("dateTime", dateTime);
+        currentSession.setAttribute("machineNameAndIp", machineNameAndIp);
+        currentSession.setAttribute("dateReleaseUpdate", dateReleaseUpdate);
         currentSession.setAttribute("gameCounter", gameCounter);
-        LOGGER.debug("Added attributes: [ip=" + ip + " dateTime=" + dateTime + " gameCounter=" + gameCounter + "]");
+        LOGGER.debug("Added attributes: [machineNameAndIp=" + machineNameAndIp + " dateReleaseUpdate=" + dateReleaseUpdate + " gameCounter=" + gameCounter + "]");
 
     }
 }

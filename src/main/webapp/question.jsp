@@ -45,10 +45,10 @@
         <div class="fixed-bottom">
             <form id="info">
                 <h2 class="text-light">Информация:</h2>
-                <p class="text-light">IP address: ${ip}</p>
+                <p class="text-light">Имя компьютера | IP адрес: ${machineNameAndIp}</p>
                 <p class="text-light">Игрок: ${name}</p>
                 <p class="text-light">Общее количество игр от всех пользователей: ${gameCounter}</p>
-                <p class="text-light">Дата и время публикации: ${dateTime}</p>
+                <p class="text-light">Дата публикации: ${dateReleaseUpdate}</p>
             </form>
         </div>
     </div>

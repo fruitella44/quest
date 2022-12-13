@@ -5,16 +5,17 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static java.util.Objects.isNull;
 
 public class QuestionService {
+    private static final Logger LOGGER = LogManager.getLogger(QuestionService.class);
+    private final Map<Integer, QuestionService> questionService = new HashMap<>();
     private String question;
     private String endGame;
     private String accept;
     private String reject;
-    private final Map<Integer, QuestionService> questionService = new HashMap<>();
-    private static final Logger LOGGER = LogManager.getLogger(QuestionService.class);
 
 
     public QuestionService() {
@@ -70,7 +71,7 @@ public class QuestionService {
     }
 
     public Map<Integer, QuestionService> getQuestionService() {
-        return questionService;
+        return new ConcurrentHashMap<>(questionService);
     }
 
 

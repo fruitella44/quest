@@ -1,6 +1,6 @@
 ## Quest-project
 
-#### Ссылка на приложение: https://quest-vy5z.onrender.com/login.jsp
+#### Ссылка на web приложение: https://quest-vy5z.onrender.com/login.jsp
 
 > Логика работы приложения:
 > * После запуска приложения, пользователю будет предложено указать имя
@@ -9,5 +9,8 @@
 * Приложение работет на web сервере tomcat с ипользованием JavaServlet
 * Логи сохраняются в консоль и записываются в файл: "appLog.log". 
 * Файл логирования генерируется автоматически, выделено памяти: 500KB. После переполнения, будет создан новый файл той же емкости.
-![applicationLog](https://i.imgur.com/SCVMs3f.png)
-* Для сборки проекта использовались: Maven, Docker, Render
+* Максимальное кол-во файлов 10. Параметры задаются в файле: log4j2.xml
+![applicationLog](https://i.imgur.com/kRy5PAG.png)
+------------------------------------
+* Для создания и сборки проекта использовались следующие технологии: 
+Maven, JavaServlets, log4j2, Bootstrap, jsp/jstl, Tomcat, JUnit, jquery, Docker, Render

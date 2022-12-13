@@ -1,32 +1,41 @@
 package com.javarush.module_3.service;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class InfoService {
+    private static final Logger LOGGER = LogManager.getLogger(InfoService.class);
+    private static int GAME_COUNTER = 0;
+    private static final SimpleDateFormat DATE_RELEASE_UPDATE = new SimpleDateFormat("dd.MM.yyyy");
+    private static final InetAddress IP_HOST_ADDRESS;
 
-    private int gameCounter;
-    private final DateTimeFormatter dateTimeFormatter;
-    private final InetAddress inetAddress;
-
-    public InfoService() throws UnknownHostException {
-        this.gameCounter = 0;
-        this.dateTimeFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
-        this.inetAddress = InetAddress.getLocalHost();
+    static {
+        try {
+            IP_HOST_ADDRESS = InetAddress.getLocalHost();
+        } catch (UnknownHostException exception) {
+            LOGGER.error("Unknown hostAddress " + exception);
+            throw new RuntimeException(exception);
+        }
     }
 
-    public LocalDateTime getDateTimeFormatter() {
-        return LocalDateTime.parse("04.12.2022 19:39", dateTimeFormatter);
+
+    public static int getGameCounter() {
+        LOGGER.info("Increase gameCounter");
+        return ++GAME_COUNTER;
     }
 
-
-    public InetAddress getInetAddress() {
-        return inetAddress;
+    public static String getDateReleaseUpdate() {
+        LOGGER.debug("Get pattern of date: " + DATE_RELEASE_UPDATE.toPattern());
+        return DATE_RELEASE_UPDATE.format(new Date());
     }
 
-    public int getGameCounter() {
-        return ++gameCounter;
+    public InetAddress getIP_HOST_ADDRESS() {
+        LOGGER.debug("MachineName and ipAddress: " + IP_HOST_ADDRESS);
+        return IP_HOST_ADDRESS;
     }
 }
