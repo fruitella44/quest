@@ -44,11 +44,12 @@ public class QuestionServlet extends HttpServlet {
 
     private void setAttributeCurrentSession(HttpSession currentSession) throws Exception {
         QuestionService questions = new QuestionService();
+        InfoService infoService = new InfoService();
 
         Object getAttributeQuestion = questions.getQuestionService();
         LOGGER.debug("Clone hashMap into concurrent Map");
 
-        Object machineNameAndIp = new InfoService().getIP_HOST_ADDRESS();
+        Object ip = infoService.getIP_HOST_ADDRESS();
         Object dateReleaseUpdate = InfoService.getDateReleaseUpdate();
         Object gameCounter = InfoService.getGameCounter();
 
@@ -57,10 +58,10 @@ public class QuestionServlet extends HttpServlet {
         currentSession.setAttribute("questions", getAttributeQuestion);
         LOGGER.debug("Added attributes: [" + questions.getQuestionService() + "]");
 
-        currentSession.setAttribute("machineNameAndIp", machineNameAndIp);
+        currentSession.setAttribute("ipAddress", ip);
         currentSession.setAttribute("dateReleaseUpdate", dateReleaseUpdate);
         currentSession.setAttribute("gameCounter", gameCounter);
-        LOGGER.debug("Added attributes: [machineNameAndIp=" + machineNameAndIp + " dateReleaseUpdate=" + dateReleaseUpdate + " gameCounter=" + gameCounter + "]");
+        LOGGER.debug("Added attributes: [ipAddress=" + ip + " dateReleaseUpdate=" + dateReleaseUpdate + " gameCounter=" + gameCounter + "]");
 
     }
 }

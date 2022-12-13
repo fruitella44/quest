@@ -10,7 +10,7 @@
 * Логи сохраняются в консоль и записываются в файл: "appLog.log". 
 * Файл логирования генерируется автоматически, выделено памяти: 500KB. После переполнения, будет создан новый файл той же емкости.
 * Максимальное кол-во файлов 10. Параметры задаются в файле: log4j2.xml
-![applicationLog](https://i.imgur.com/kRy5PAG.png)
+![applicationLog](https://i.imgur.com/ejUWtZH.png)
 ------------------------------------
 * Для создания и сборки проекта использовались следующие технологии: 
 Maven, JavaServlets, log4j2, Bootstrap, jsp/jstl, Tomcat, JUnit, jquery, Docker, Render

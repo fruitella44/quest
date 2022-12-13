@@ -34,8 +34,8 @@ public class InfoService {
         return DATE_RELEASE_UPDATE.format(new Date());
     }
 
-    public InetAddress getIP_HOST_ADDRESS() {
-        LOGGER.debug("MachineName and ipAddress: " + IP_HOST_ADDRESS);
-        return IP_HOST_ADDRESS;
+    public String getIP_HOST_ADDRESS() {
+        LOGGER.debug("IP Address: " + IP_HOST_ADDRESS);
+        return "" + IP_HOST_ADDRESS.getHostAddress();
     }
 }
