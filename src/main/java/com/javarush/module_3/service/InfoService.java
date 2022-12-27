@@ -11,7 +11,7 @@ import java.util.Date;
 public class InfoService {
     private static final Logger LOGGER = LogManager.getLogger(InfoService.class);
     private static int GAME_COUNTER = 0;
-    private static final SimpleDateFormat DATE_RELEASE_UPDATE = new SimpleDateFormat("dd.MM.yyyy");
+    private static final SimpleDateFormat CURRENT_DATE_RUN_APPLICATION = new SimpleDateFormat("dd.MM.yyyy");
     private static final InetAddress IP_HOST_ADDRESS;
 
     static {
@@ -29,9 +29,9 @@ public class InfoService {
         return ++GAME_COUNTER;
     }
 
-    public static String getDateReleaseUpdate() {
-        LOGGER.debug("Get pattern of date: " + DATE_RELEASE_UPDATE.toPattern());
-        return DATE_RELEASE_UPDATE.format(new Date());
+    public static String getCurrentDateRunApplication() {
+        LOGGER.debug("Get pattern of date: " + CURRENT_DATE_RUN_APPLICATION.toPattern());
+        return CURRENT_DATE_RUN_APPLICATION.format(new Date());
     }
 
     public String getIP_HOST_ADDRESS() {

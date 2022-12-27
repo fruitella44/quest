@@ -45,7 +45,7 @@
         <p class="text-light">IP адрес: ${ipAddress}</p>
         <p class="text-light">Игрок: ${name}</p>
         <p class="text-light">Общее количество игр от всех пользователей: ${gameCounter}</p>
-        <p class="text-light">Дата публикации: ${dateReleaseUpdate}</p>
+        <p class="text-light">Дата запуска приложения: ${curDateRunApplication}</p>
       </form>
     </div>
   </div>
