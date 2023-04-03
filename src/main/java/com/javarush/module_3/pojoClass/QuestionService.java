@@ -1,4 +1,4 @@
-package com.javarush.module_3.service;
+package com.javarush.module_3.pojoClass;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

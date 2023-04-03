@@ -1,4 +1,4 @@
-package com.javarush.module_3.service;
+package com.javarush.module_3.pojoClass;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,7 +18,8 @@ class QuestionServiceTest {
 
     @Test
     void checkNullArgumentQuestions() {
-        assertThrows(IllegalArgumentException.class, () -> new QuestionService(null, null, null, null));
+        assertThrows(IllegalArgumentException.class, () -> new QuestionService(
+                null, null, null, null));
     }
 
     @Test

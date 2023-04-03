@@ -1,7 +1,7 @@
 package com.javarush.module_3.servlet;
 
-import com.javarush.module_3.service.InfoService;
-import com.javarush.module_3.service.QuestionService;
+import com.javarush.module_3.pojoClass.InfoService;
+import com.javarush.module_3.pojoClass.QuestionService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -50,7 +50,7 @@ public class QuestionServlet extends HttpServlet {
         LOGGER.debug("Clone hashMap into concurrent Map");
 
         Object ip = infoService.getIP_HOST_ADDRESS();
-        Object dateReleaseUpdate = InfoService.getDateReleaseUpdate();
+        Object curDateRunApplication = InfoService.getCurrentDateRunApplication();
         Object gameCounter = InfoService.getGameCounter();
 
         currentSession.getAttribute("gameCounter");
@@ -59,9 +59,9 @@ public class QuestionServlet extends HttpServlet {
         LOGGER.debug("Added attributes: [" + questions.getQuestionService() + "]");
 
         currentSession.setAttribute("ipAddress", ip);
-        currentSession.setAttribute("dateReleaseUpdate", dateReleaseUpdate);
+        currentSession.setAttribute("curDateRunApplication", curDateRunApplication);
         currentSession.setAttribute("gameCounter", gameCounter);
-        LOGGER.debug("Added attributes: [ipAddress=" + ip + " dateReleaseUpdate=" + dateReleaseUpdate + " gameCounter=" + gameCounter + "]");
+        LOGGER.debug("Added attributes: [ipAddress=" + ip + " curDateRunApplication=" + curDateRunApplication + " gameCounter=" + gameCounter + "]");
 
     }
 }

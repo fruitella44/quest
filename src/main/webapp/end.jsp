@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Конец игры</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <script src="<c:url value="jquery-3.6.0.min.js"/>"></script>
+  <script src="<c:url value="bootstrap/jquery-3.6.0.min.js"/>"></script>
 </head>
 
 <body style="background-image: url('https://i.imgur.com/27TXzpl.jpg')">
@@ -45,7 +45,7 @@
         <p class="text-light">IP адрес: ${ipAddress}</p>
         <p class="text-light">Игрок: ${name}</p>
         <p class="text-light">Общее количество игр от всех пользователей: ${gameCounter}</p>
-        <p class="text-light">Дата публикации: ${dateReleaseUpdate}</p>
+        <p class="text-light">Дата запуска приложения: ${curDateRunApplication}</p>
       </form>
     </div>
   </div>
