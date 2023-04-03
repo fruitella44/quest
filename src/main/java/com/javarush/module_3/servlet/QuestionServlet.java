@@ -1,7 +1,7 @@
 package com.javarush.module_3.servlet;
 
-import com.javarush.module_3.service.InfoService;
-import com.javarush.module_3.service.QuestionService;
+import com.javarush.module_3.pojoClass.InfoService;
+import com.javarush.module_3.pojoClass.QuestionService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
